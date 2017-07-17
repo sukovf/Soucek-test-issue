@@ -26,8 +26,8 @@ class HomepagePresenter extends BasePresenter
   {
     $this->calculator = $calculator;
   }
-
-  public function renderDefault()
+  
+  public function actionDefault()
   {
     $value=$this->getParameter("value");
     if(isset($value))
