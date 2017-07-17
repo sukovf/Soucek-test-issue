@@ -1,0 +1,6 @@
+[17-Jul-2017 14:14:12 Europe/Prague] PHP Fatal error:  Uncaught Nette\Application\BadRequestException: No route for HTTP request. in D:\web_Dev\php_tets\php_test\vendor\nette\application\src\Application\Application.php:116
+Stack trace:
+#0 D:\web_Dev\php_tets\php_test\vendor\nette\application\src\Application\Application.php(83): Nette\Application\Application->createInitialRequest()
+#1 D:\web_Dev\php_tets\php_test\www\index.php(8): Nette\Application\Application->run()
+#2 {main}
+  thrown in D:\web_Dev\php_tets\php_test\vendor\nette\application\src\Application\Application.php on line 116

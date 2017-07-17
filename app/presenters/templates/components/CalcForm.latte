@@ -1,0 +1,8 @@
+<form n:name="calcForm">
+  <ul n:if="$form->ownErrors">
+		<li n:foreach="$form->ownErrors as $error">{$error}</li>
+	</ul>
+  
+  <textarea n:name="value" cols="75" rows="3"></textarea><br>
+  <input n:name="submit">
+</form>

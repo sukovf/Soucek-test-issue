@@ -1,0 +1,10 @@
+{block title}
+  <title>Calculator</title>
+{/block}
+
+{block content}
+  {ifset $result}
+    {$result}<br>
+  {/ifset}
+  {include ..\components\CalcForm.latte}
+{/block}
