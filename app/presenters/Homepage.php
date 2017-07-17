@@ -27,12 +27,12 @@ class HomepagePresenter extends BasePresenter
     $this->calculator = $calculator;
   }
 
-	public function renderDefault()
-	{
+  public function renderDefault()
+  {
     $value=$this->getParameter("value");
     if(isset($value))
       $this->template->result = $this->calculator->calculate($value);
-	}
+  }
   
   protected function createComponentCalcForm()
   {
