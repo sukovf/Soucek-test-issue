@@ -7,15 +7,15 @@ namespace App\Services;
  */
 class Calculator
 {
-  /** @var string to be evaluated */
+  	/** @var string to be evaluated */
 	private $inputString;
   
-  /** @var int index of currently processed character in input string */
+  	/** @var int index of currently processed character in input string */
 	private $currCharIndex = 0;
 
-  /** self-explanatory
-   * @return bool
-   */
+	/** self-explanatory
+	 * @return bool
+	 */
 	private function isStringEndReached()
 	{
 		if ($this->currCharIndex >= strlen($this->inputString))
@@ -24,10 +24,10 @@ class Calculator
 		return false;
 	}
 
-  /** Return an ASCII character number in $inputString on $currCharIndex
-   *  position
-   * @return integer
-   */
+	/** Return an ASCII character number in $inputString on $currCharIndex
+	 *  position
+	 * @return integer
+	 */
 	private function get()
 	{
 		if ($this->isStringEndReached())
@@ -36,10 +36,10 @@ class Calculator
 		return ord($this->inputString[$this->currCharIndex]);
 	}
 
-  /** Return an ASCII character number in $inputString on $currCharIndex
-   *  position and increments $currCharIndex pointer 
-   * @return integer
-   */
+	/** Return an ASCII character number in $inputString on $currCharIndex
+	 *  position and increments $currCharIndex pointer 
+	 * @return integer
+	 */
 	private function eat()
 	{
 		if ($this->isStringEndReached())
@@ -48,10 +48,10 @@ class Calculator
 		return ord($this->inputString[$this->currCharIndex++]);
 	}
 
-  /** Following four functions (number, factor, term and expression) recursively
-   *  travel down the input string and evaluate it part by part while respecting
-   *  priority of arithmetic operations
-   */
+	/** Following four functions (number, factor, term and expression) recursively
+	 *  travel down the input string and evaluate it part by part while respecting
+	 *  priority of arithmetic operations
+	 */
 	private function number()
 	{
 		$result = $this->eat() - ord("0");
@@ -100,9 +100,9 @@ class Calculator
 
 	private function expression()
 	{
-    /** first try to find any multiplication or division operations on the same
-     *  level as they have a higher priority than addition and subtraction
-     */
+		/** first try to find any multiplication or division operations on the same
+		 *  level as they have a higher priority than addition and subtraction
+		 */
 		$result = $this->term();
     
 		while ($this->get() == ord("+") || $this->get() == ord("-"))
@@ -116,11 +116,11 @@ class Calculator
 		return $result;
 	}
 
-  /** Remove all white spaces and check for possible invalid characters
-   *  occurrence
-   * @param string
-   * @return bool
-   */
+	/** Remove all white spaces and check for possible invalid characters
+	 *  occurrence
+	 * @param string
+	 * @return bool
+	 */
 	private function processInputString($string)
 	{
 		$string = preg_replace("/\s+/", "", $string);
@@ -132,10 +132,10 @@ class Calculator
 		return true;
 	}
 
-  /** Evaluate an input string
-   * @param string
-   * @return string evaluated number or an error string in the case of failure
-   */
+	/** Evaluate an input string
+	 * @param string
+	 * @return string evaluated number or an error string in the case of failure
+	 */
 	public function calculate($string)
 	{
 		if (!$this->processInputString($string))
